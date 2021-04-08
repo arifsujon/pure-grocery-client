@@ -1,0 +1,17 @@
+.admin-nav .left {
+    background-color: wheat;
+    height: 100vh;
+}
+.admin-nav ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+}
+.admin-nav ul li {
+    list-style: none;
+}
+.admin-nav ul li a {
+    text-decoration: none;
+    
+}

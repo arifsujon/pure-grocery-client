@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.logo, .nav-item{
+  font-weight: 700;
+}
+a.nav-item {
+  margin-left: 50px;
+  padding: 10px 15px !important;
+  
+}
+a:hover.nav-item {
+  color: #fff !important;
+  background-color: green;
+  border-radius: 5px;
+  
+}
