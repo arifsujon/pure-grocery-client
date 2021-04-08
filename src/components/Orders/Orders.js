@@ -6,7 +6,7 @@ const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:5055/orders?email='+loggedInUser.email)
+        fetch('https://arcane-forest-38769.herokuapp.com/orders?email='+loggedInUser.email)
         .then(res => res.json())
         .then(data => setOrders(data));
     }, [])
@@ -15,14 +15,15 @@ const Orders = () => {
             return (
                 <div className="container">
                     <table className="table">
-                        <thead>
-                            <th>Product Name</th>
-                            <th>Weight</th>
-                            <th>Ordered By</th>
-                            <th>Receiver Email</th>
-                            <th>Price</th>
-                        </thead>
                         <tbody>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Weight</th>
+                                <th>Ordered By</th>
+                                <th>Receiver Email</th>
+                                <th>Price</th>
+                            </tr>
+                        
                             <tr>
                                 <td>{order.name}</td>
                                 <td>{order.weight}</td>

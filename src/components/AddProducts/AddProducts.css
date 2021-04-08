@@ -1,0 +1,5 @@
+.add-products input {
+    width: 50%;
+    outline: 0;
+    border: 1px solid black;
+}

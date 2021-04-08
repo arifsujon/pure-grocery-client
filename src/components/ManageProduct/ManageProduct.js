@@ -4,13 +4,13 @@ const ManageProduct = () => {
     const [products, setProducts] = useState([])
     console.log(products);
     useEffect(() => {
-        fetch('http://localhost:5055/products')
+        fetch('https://arcane-forest-38769.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
 
     const handleDelete = (id)=>{
-        fetch(`http://localhost:5055/deleteProduct/${id}`, {
+        fetch(`https://arcane-forest-38769.herokuapp.com/deleteProduct/${id}`, {
                 method: 'DELETE'
             })
             .then(result => {
@@ -20,9 +20,9 @@ const ManageProduct = () => {
 
     return (
         <div className="col-md-10">
-            <h1>This is manage product</h1>
+            <h3 className="mt-5 mb-5">Manage Product</h3>
             {
-                products.map(product => <li>{product.name} <button onClick={() => handleDelete(product._id)}>Delete</button></li>)
+                products.map(product => <li>{product.name} <button  className="ml-5 mb-3" onClick={() => handleDelete(product._id)}><span className="">Delete</span></button></li>)
             }
         </div>
     );

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import './AddProducts.css';
 
 const AddProducts = () => {
     const { register, handleSubmit } = useForm();
@@ -15,7 +16,7 @@ const AddProducts = () => {
         };
         // console.log(productData)
 
-        const url = 'http://localhost:5055/addProduct';
+        const url = 'http:https://arcane-forest-38769.herokuapp.com/addProduct';
         fetch(url, {
             method: 'POST',
             headers: {
@@ -44,13 +45,14 @@ const AddProducts = () => {
     }
 
     return (
-        <div className="col-md-10">
+        <div className="col-md-10 text-center add-products">
+            <h3>Add Product</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input defaultValue="Product Name" {...register("name")} /><br/>
-                <input defaultValue="Price" {...register("price")} /><br/>
-                <input defaultValue="Weight" {...register("weight")} /><br/>
-                <input type="file" onChange={handleImageUpload}/> <br/>
-                <input type="submit" />
+                <input className="mt-5 p-2 rounded" placeholder="Product Name" {...register("name")} /><br/>
+                <input className="mt-3 p-2 rounded" placeholder="Price" {...register("price")} /><br/>
+                <input className="mt-3 p-2 rounded" placeholder="Weight" {...register("weight")} /><br/>
+                <input className="mt-3" type="file" onChange={handleImageUpload}/> <br/>
+                <input className="mt-3 p-2 rounded" type="submit" />
             </form>
         </div>
     );
